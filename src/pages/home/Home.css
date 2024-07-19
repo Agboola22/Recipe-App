@@ -10,10 +10,11 @@
 
 .loading-spinner {
     @apply flex items-center justify-center min-h-screen;
+    margin-top: -10%;
 }
 
 .spinner {
     @apply border-4 border-customPurple border-solid border-t-transparent rounded-full w-16 h-16;
-    border-top-width: 4px;
     animation: spin 1s linear infinite;
+    transform: translateY(-10%);
 }
