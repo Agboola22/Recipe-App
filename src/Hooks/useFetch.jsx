@@ -18,7 +18,7 @@ const useFetch = (url) => {
                 }
                 const response = await res.json()
                 setIsPending(false)
-                setData(response)
+                setData(response.recipes || []);
                 setError(null)
             } catch (err) {
                 setIsPending(false)
