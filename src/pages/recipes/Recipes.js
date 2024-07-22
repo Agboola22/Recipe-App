@@ -10,7 +10,7 @@ const Recipes = () => {
     const recipe = data && data.recipes ? data.recipes.find(r => r.id === id) : null
 
     return (
-        <div className='mx-auto my-16 w-4/5 md:w-3/5 bg-white box-border  text-center p-10 rounded-sm shadow'>
+        <div className='mx-auto my-16 w-full md:w-3/5 bg-white box-border  text-center p-10 rounded-sm shadow'>
             {isPending && (
                 <div className="loading-spinner">
                     <div className="spinner"></div>
