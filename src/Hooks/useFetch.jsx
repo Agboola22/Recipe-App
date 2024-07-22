@@ -1,33 +1,30 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
-    const [data, setData] = useState(null)
-    const [isPending, setIsPending] = useState(false)
-    const [error, setError] = useState(null)
+    const [data, setData] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            setIsPending(true)
-
             try {
-                const res = await fetch(url)
-                console.log(res)
-                if (!res.ok) {
-                    throw new Error(res.statusText)
-
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
                 }
-                const response = await res.json()
-                setIsPending(false)
-                setData(response.recipes || []);
-                setError(null)
+                const result = await response.json();
+                setData(result);
+                setIsPending(false);
             } catch (err) {
-                setIsPending(false)
-                setError('Unable to fetch data')
+                setError(err.message);
+                setIsPending(false);
             }
-        }
-        fetchData()
-    }, [url])
-    return { data, isPending, error }
-}
+        };
 
-export default useFetch
+        fetchData();
+    }, [url]);
+
+    return { data, isPending, error };
+};
+
+export default useFetch;

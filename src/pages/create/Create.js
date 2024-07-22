@@ -2,7 +2,9 @@ import React from 'react'
 
 const Create = () => {
     return (
-        <div>Create</div>
+        <div className='w-4/5 mx-auto'>
+            crete
+        </div>
     )
 }
 
