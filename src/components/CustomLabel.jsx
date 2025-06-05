@@ -17,7 +17,7 @@ const CustomLabel = ({
                 value={inputValue}
                 onChange={onChange}
                 required
-                className='appearance-none relative block w-full px-3 py-2 rounded-lg border border-[#d4d4d4] bg-white outline-none'
+                className='appearance-none relative block w-full px-3 py-2 rounded-lg border border-[#d4d4d4] bg-white outline-none box-border'
             />
         </div>
     )

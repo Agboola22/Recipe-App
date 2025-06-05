@@ -4,14 +4,16 @@ import Create from '../pages/create/Create'
 import Recipes from '../pages/recipes/Recipes'
 import Search from '../pages/search/Search'
 import Navbar from './Navbar'
+import ThemeSelector from './ThemeSelector';
 
 
 
 const MyRoutes = () => {
     return (
-        <div className=' w-full min-h-screen'>
+        <div className=' w-full min-h-screen bg-gray-200 text-black dark:bg-gray-900 '>
             <BrowserRouter>
                 <Navbar />
+                <ThemeSelector />
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/create' element={<Create />} />

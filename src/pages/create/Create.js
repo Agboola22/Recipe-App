@@ -1,5 +1,8 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import CustomLabel from '../../components/CustomLabel'
+import { projectFirestore } from '../../firebase/Config'
+// import { useFetch } from '../../Hooks/useFetch'
 
 const Create = () => {
     const [title, setTitle] = useState('')
@@ -8,10 +11,20 @@ const Create = () => {
     const [newIngredient, setNewIngredient] = useState('')
     const [ingredients, setIngredients] = useState([])
     const ingInput = useRef(null)
+    const history = useNavigate()
 
-    const handleSubmit = (e) => {
+    // const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(title, method, cookingTime, newIngredient, ingredients)
+        // console.log(title, method, cookingTime, newIngredient, ingredients)
+        const doc = { title, ingredients, method, cookingTime: cookingTime + ' minutes' }
+        try {
+            await projectFirestore.collection('recipes').add(doc)
+            history('/')
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     const handleAdd = (e) => {
@@ -25,9 +38,10 @@ const Create = () => {
         ingInput.current.focus()
     }
 
+
     return (
         <div className='md:w-[480px] w-[280px] mx-auto text-center my-16 text-[#555]'>
-            <h2 className='text-3xl font-semibold tracking-wider mb-8'>Add a New Recipe</h2>
+            <h2 className='md:text-3xl text-2xl font-semibold tracking-wider mb-8'>Add a New Recipe</h2>
             <form onSubmit={handleSubmit}>
                 <div className=' space-y-4'>
                     <CustomLabel
@@ -38,6 +52,7 @@ const Create = () => {
                         onChange={(e) => setTitle(e.target.value)}
 
                     />
+                    {/* ingredients add */}
                     <div className='space-y-2 text-base'>
                         <label htmlFor='newIngredient' className='block text-left font-medium'>Recipe Ingredients: </label>
                         <div className='grid md:grid-cols-5 grid-cols-4 gap-4 items-center'>
@@ -55,6 +70,7 @@ const Create = () => {
                         </div>
                         <p className=' text-left'>Current Ingredients: {ingredients.map(i => <em key={i}>{i}, </em>)}</p>
                     </div>
+
                     <div className='space-y-2 text-base'>
                         <label htmlFor='method' className='block text-left font-medium'>Recipe Method: </label>
                         <textarea

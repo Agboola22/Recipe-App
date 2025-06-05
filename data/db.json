@@ -49,6 +49,18 @@
       ],
       "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "35 minutes"
+    },
+    {
+      "id": "de3a",
+      "title": "Fried rice",
+      "ingredients": [
+        "rice,",
+        "sesoning",
+        "onions",
+        "bay leaves"
+      ],
+      "method": "Prepare the Rice:\n\nIf using fresh rice, spread it out on a baking sheet and let it cool completely before using. Cold, day-old rice works best as it is drier and prevents the fried rice from becoming mushy.\nHeat the Oil:\n\nIn a large skillet or wok, heat the vegetable oil over medium-high heat.\nCook the Aromatics:\n\nAdd the diced onion and cook until it becomes translucent.\nAdd the minced garlic and cook for about 30 seconds until fragrant.\nCook the Vegetables:\n\nAdd the mixed vegetables to the skillet and cook until they are tender.\nScramble the Eggs:\n\nPush the vegetables to one side of the skillet.\nPour the beaten eggs into the empty side and scramble them until fully cooked. Mix the eggs with the vegetables.\nAdd the Rice:\n\nAdd the cooked rice to the skillet, breaking up any clumps with a spatula. Stir-fry everything together.\nSeason the Rice:\n\nPour the soy sauce, oyster sauce (if using), and sesame oil over the rice. Mix well to ensure the rice is evenly coated.\nSeason with salt and pepper to taste.\nAdd Protein:\n\nIf using cooked protein, add it to the skillet and stir to combine. Cook until everything is heated through.\nFinish with Green Onions:\n\nAdd the sliced green onions and give the fried rice a final stir.\nServe:\n\nServe the fried rice hot, garnished with extra green onions if desired.\nEnjoy your homemade fried rice!",
+      "cookingTime": "60minutes"
     }
   ]
 }
